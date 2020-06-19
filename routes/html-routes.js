@@ -9,14 +9,12 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
   app.get("/", (req, res) => {
     //console.log(process.env.GOOGLE_API_KEY)
-     //If the user already has an account send them to the members page
+    //If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
     }
     res.render("index");
   });
-
-  
 
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
