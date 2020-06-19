@@ -1,5 +1,5 @@
 ### Schema
-
+DROP DATABASE IF EXISTS funactiv_db;
 CREATE DATABASE funactiv_db;
 USE funactiv_db;
 
