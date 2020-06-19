@@ -14,7 +14,7 @@ CREATE TABLE amember
 	first_name VARCHAR(20) NOT NULL,
     last_name VARCHAR(20) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    weight FLOAT(5,2) NOT NULL,
+    _weight FLOAT(5,2) NOT NULL,
     height FLOAT(2,1) NOT NULL,
     gender CHAR,
     active_mins INT(2),
@@ -48,6 +48,7 @@ CREATE TABLE goals
 (
    goal_id INT NOT NULL AUTO_INCREMENT,                                                                               
    category VARCHAR(50) NOT NULL,
+   descript VARCHAR(50) NOT NULL,
    carbs_goal INT NOT NULL,
    protein_goal INT NOT NULL,
    fat_goal INT NOT NULL,
