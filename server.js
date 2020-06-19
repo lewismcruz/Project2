@@ -1,4 +1,6 @@
 // Requiring necessary npm packages
+// google api KEY= AIzaSyDjRdBEgqxg-w0WzKWvM9Rd_ODIuyvXrIk
+//853894535093-1ulhffhg4fv6i30ujcousg32460jdt07.apps.googleusercontent.com
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
