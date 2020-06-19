@@ -10,12 +10,27 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.render(path.join("signup"));
+    // if (req.user) {
+    //   res.redirect("/members");
+    // }
+    res.render("index");
   });
 
+  app.get("/signup", (req, res) => {
+    // If the user already has an account send them to the members page
+    // if (req.user) {
+    //   res.redirect("/members");
+    // }
+    res.render("signup");
+  });
+
+  app.get("/dashboard", (req, res) => {
+    // If the user already has an account send them to the members page
+    // if (req.user) {
+    //   res.redirect("/members");
+    // }
+    res.render("membersDashboard");
+  });
   // app.get("/login", (req, res) => {
   //   // If the user already has an account send them to the members page
   //   if (req.user) {
