@@ -1,3 +1,18 @@
+<ul>
+  {{#each users}}
+    <li>
+      <p>
+        {{this.id}}. 
+        {{this.email}}
+        {{this.pass}}
+
+
+        <button data-userid="{{this.id}}" class="">Delete</button>
+      </p>
+    </li>
+  {{/each}}
+</ul>
+
 {{> navbar/navbar}}
   <div class="container">
     <div class="row">

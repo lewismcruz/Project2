@@ -19,7 +19,12 @@
     "express": "^4.17.0",
     "express-handlebars": "^4.0.4",
     "express-session": "^1.16.1",
+<<<<<<< HEAD
     "mysql2": "^1.7.0",
+=======
+    "googleapis": "^52.1.0",
+    "mysql2": "^1.6.5",
+>>>>>>> a9d79cb412b08819fbeed1bda0f003703403e683
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6"
