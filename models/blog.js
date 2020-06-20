@@ -1,24 +1,24 @@
 module.exports = function(sequelize, DataTypes) {
-    const Blog = sequelize.define("Blog", {
-        entry_id: {
-            allowNull: false,
-            autoIncrement: true,
-            primaryKey: true,
-            type: DataTypes.INTEGER
-        },
-        blogpost_title: {
-            allowNull: false,
-            type: DataTypes.STRING,
-        },
-        createdAt: {
-            allowNull: false,
-            type: DataTypes.DATE
-        },
-        updatedAt: {
-            allowNull: false,
-            type: DataTypes.DATE
-        }
-    });
+  const Blog = sequelize.define("Blog", {
+    blogiId: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    entryId: {
+      allowNull: false,
+      type: DataTypes.INTEGER
+    },
+    blogPostTitle: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
+    blogPost: {
+      allowNull: false,
+      type: DataTypes.Text
+    }
+  });
 
-return Blog;
+  return Blog;
 };

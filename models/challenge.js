@@ -25,25 +25,11 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
         },
         // Member ID for member that extended the challenge
-        amember_id: {
+        user_id: {
             allowNull: false,
             autoIncrement: false,
             type: DataTypes.INTEGER
         },
-        // Friend ID to friend of member that challenge was extended to
-        friend_id: {
-            allowNull: false,
-            autoIncrement: true,
-            type: DataTypes.INTEGER
-        },
-        createdAt: {
-            allowNull: false,
-            type: DataTypes.DATE
-        },
-        updatedAt: {
-            allowNull: false,
-            type: DataTypes.DATE
-        }
     });
 
 return Challenge;
