@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
         // Member ID for member that extended the challenge
         amember_id: {
             allowNull: false,
-            autoIncrement: true,
+            autoIncrement: false,
             type: DataTypes.INTEGER
         },
         // Friend ID to friend of member that challenge was extended to
