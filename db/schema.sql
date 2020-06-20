@@ -3,7 +3,7 @@
 CREATE DATABASE funactiv_db;
 USE funactiv_db;
 
--- I used 'amember' for 'user' - not married  to it.  Member work is a reserved MySQL keyword. If team wants we can change to 'user', we can.
+-- I used 'amember' for 'amember' - not married  to it.  Member work is a reserved MySQL keyword. If team wants we can change to 'amember', we can.
 
 -- Missing datatypes for a few metrics.  Need to confirm are these 'time' values and how many decimal places do we want to hold.
 
