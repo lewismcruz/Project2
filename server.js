@@ -2,6 +2,9 @@
 //https://www.googleapis.com/fitness/v1/resourcePath?parameters
 // google api KEY= AIzaSyDjRdBEgqxg-w0WzKWvM9Rd_ODIuyvXrIk
 //853894535093-1ulhffhg4fv6i30ujcousg32460jdt07.apps.googleusercontent.com
+// Brandon thinks that the following two 'const' variables go in html-routes.js?
+// const express = require("express");
+// const google = require("googleapis");
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
