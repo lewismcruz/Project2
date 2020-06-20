@@ -45,4 +45,4 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../views/membersDashboards.handlebars"));
   });
 };
-//https://www.googleapis.com/fitness/v1/resourcePath?parameters
+

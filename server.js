@@ -1,4 +1,5 @@
 // Requiring necessary npm packages
+//https://www.googleapis.com/fitness/v1/resourcePath?parameters
 // google api KEY= AIzaSyDjRdBEgqxg-w0WzKWvM9Rd_ODIuyvXrIk
 //853894535093-1ulhffhg4fv6i30ujcousg32460jdt07.apps.googleusercontent.com
 const express = require("express");

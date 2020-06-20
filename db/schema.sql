@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS funactiv_db;
 CREATE DATABASE funactiv_db;
 USE funactiv_db;
 
--- I used 'amember' for 'user' - not married  to it.  If team wants we can change to 'user'.
+-- I used 'amember' for 'amember' - not married  to it.  Member work is a reserved MySQL keyword. If team wants we can change to 'amember', we can.
 
 -- Missing datatypes for a few metrics.  Need to confirm are these 'time' values and how many decimal places do we want to hold.
 
@@ -14,14 +14,14 @@ CREATE TABLE amember
 	first_name VARCHAR(20) NOT NULL,
     last_name VARCHAR(20) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    weight FLOAT(5,2) NOT NULL,
+    _weight FLOAT(5,2) NOT NULL,
     height FLOAT(2,1) NOT NULL,
     gender CHAR,
     active_mins INT(2),
-    lifetime_total 
-    carb_intake
-    protien_intake
-    fat_intake    
+    lifetime_total INT,
+    carb_intake INT,
+    protien_intake INT,
+    fat_intake INT,
 	PRIMARY KEY (amember_id)
     
 );
@@ -48,6 +48,7 @@ CREATE TABLE goals
 (
    goal_id INT NOT NULL AUTO_INCREMENT,                                                                               
    category VARCHAR(50) NOT NULL,
+   descript VARCHAR(50) NOT NULL,
    carbs_goal INT NOT NULL,
    protein_goal INT NOT NULL,
    fat_goal INT NOT NULL,
