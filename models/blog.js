@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     blogPost: {
       allowNull: false,
-      type: DataTypes.Text
+      type: DataTypes.TEXT
     }
   });
 
