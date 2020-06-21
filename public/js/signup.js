@@ -9,8 +9,6 @@ $(document).ready(() => {
   const height = $("input#height-input");
   const gender = $("input#gender-input");
 
-
-
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", event => {
     event.preventDefault();
@@ -23,9 +21,9 @@ $(document).ready(() => {
       height: height.val().trim(),
       gender: gender.val().trim()
     };
-    if (!userData.email || !userData.password) {
-      return;
-    }
+    // if (!userData.email || !userData.password) {
+    //   return;
+    // }
     // eslint-disable-next-line prettier/prettier
     console.log (userData.email, userData.password, userData.firstName, userData.lastName, userData.weight, userData.height, userData.gender)
     // If we have an email and password, run the signUpUser function
