@@ -38,25 +38,39 @@
     </div>
   </nav>
 
-  <!-- List of All Users/Members/Friends -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Welcome <span class="member-name"></span></h2>
       </div>
     </div>
- 
-<div class="container">
-  <div class="row">
 
-<h1>Friends List <span class="member-name"></span></h2>
-    <ul>
-      {{#each userData}}
-        <li>
-        {{!-- facebook pic? --}}
-          <img src="https://via.placeholder.com/100" class="card-img" alt="Profile Picture">
-          <p><span class="label">Name:</span> {{this.first_name}} {{this.last_name}} </p>
-          <p><span class="label">Lifetime:</span> {{this.lifetime_total}}</p>
-        </li>
-      {{/each}}
-    </ul>
-   </div>
+    <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+      <div class="col-md-4">
+          <img src="https://via.placeholder.com/100" class="card-img" alt="...">
+          <h5 class="card-title">User Name<br>
+          Location<br>
+          Member Since: 2020<br>
+          Goals: Gain Muscle<br>
+        </h5>
+
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <p class="card-text">Fitness Accomplishments: 300 active minutes this week!</p>
+            <p class="card-text">Nutrition Accomplishments: 300 active minutes this week!<br>
+            Calories: <br>
+            Carbs:<br>
+            Protein:<br>
+            Fats:</p>
+
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
