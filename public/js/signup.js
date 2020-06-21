@@ -26,15 +26,23 @@ $(document).ready(() => {
     if (!userData.email || !userData.password) {
       return;
     }
-
+    // eslint-disable-next-line prettier/prettier
+    console.log (userData.email, userData.password, userData.firstName, userData.lastName, userData.weight, userData.height, userData.gender)
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password);
+    // eslint-disable-next-line prettier/prettier
+    signUpUser(userData.email, userData.password, userData.firstName, userData.lastName, userData.weight, userData.height, userData.gender);
     emailInput.val("");
     passwordInput.val("");
+    firstName.val("");
+    lastName.val("");
+    weight.val("");
+    height.val("");
+    gender.val("");
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
+  // eslint-disable-next-line prettier/prettier
   function signUpUser(email, password, firstName, lastName, weight, height, gender) {
     $.post("/api/signup", {
       email: email,
