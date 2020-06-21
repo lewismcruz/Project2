@@ -18,10 +18,10 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
-    userId: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+    // userId: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
     // The password cannot be null
     password: {
       type: DataTypes.STRING,
@@ -56,19 +56,19 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     activeMins: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.INTEGER
     },
     carbIntake: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.INTEGER
     },
     proteinIntake: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.INTEGER
     },
     fatIntake: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.INTEGER
     }
   });
