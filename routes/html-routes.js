@@ -4,6 +4,9 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const router = express.Router();
 const userObj = require("../models/user.js");
+
+//require ("dotenv")
+
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
