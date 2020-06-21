@@ -3,70 +3,66 @@ DROP DATABASE IF EXISTS funactiv_db;
 CREATE DATABASE funactiv_db;
 USE funactiv_db;
 
--- I used 'amember' for 'amember' - not married  to it.  Member work is a reserved MySQL keyword. If team wants we can change to 'amember', we can.
-
--- Missing datatypes for a few metrics.  Need to confirm are these 'time' values and how many decimal places do we want to hold.
-
-CREATE TABLE amember
+CREATE TABLE userData
 (
-    id INT(11) AUTO_INCREMENT NOT NULL,
-	amember_id INT(11),
-	first_name VARCHAR(20) NOT NULL,
-    last_name VARCHAR(20) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    _weight FLOAT(5,2) NOT NULL,
-    height FLOAT(2,1) NOT NULL,
-    gender CHAR,
-    active_mins INT(2),
-    lifetime_total INT,
-    carb_intake INT,
-    protien_intake INT,
-    fat_intake INT,
-	PRIMARY KEY (amember_id)
+    id INT AUTO_INCREMENT NOT NULL
+	, user_id INT NULL
+	, password VARCHAR(255) NOT NULL
+	, first_name VARCHAR(20) NOT NULL
+    , last_name VARCHAR(20) NOT NULL
+    , email VARCHAR(100) NOT NULL
+    , weight FLOAT(5,2) NOT NULL
+    , height FLOAT(2,1) NOT NULL
+    , gender CHAR
+    , active_mins INT NULL
+    , lifetime_total INT NULL
+    , carb_intake INT NULL
+    , protien_intake INT NULL 
+    , fat_intake INT NULL
+	, PRIMARY KEY (id)
     
 );
 
 CREATE TABLE friends_list
 (
-    friend_id INT NOT NULL AUTO_INCREMENT,
-    first_name VARCHAR(20) NOT NULL,
-    last_name VARCHAR(20) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    gender VARCHAR(1) NOT NULL,
-    amember_refer_id int NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (friend_id),
-    FOREIGN KEY (amember_id) REFERENCES amember(id)
+    friend_id INT NOT NULL AUTO_INCREMENT
+    , first_name VARCHAR(20) NOT NULL
+    , last_name VARCHAR(20) NOT NULL
+    , email VARCHAR(100) NOT NULL
+    , gender VARCHAR(1) NOT NULL
+    , user_refer_id int NULL
+    , PRIMARY KEY (friend_id)
 );
 
 CREATE TABLE blog 
 (
-   entry_id INT NOT NULL AUTO_INCREMENT,
-   blogpost_title VARCHAR(50) NOT NULL
+   blog_id INT NOT NULL AUTO_INCREMENT
+   , entry_id INT NOT NULL
+   , blogpost_title VARCHAR(50) NOT NULL
+   , PRIMARY KEY (blog_id)
 );
 
 CREATE TABLE goals
 (
-   goal_id INT NOT NULL AUTO_INCREMENT,                                                                               
-   category VARCHAR(50) NOT NULL,
-   descript VARCHAR(50) NOT NULL,
-   carbs_goal INT NOT NULL,
-   protein_goal INT NOT NULL,
-   fat_goal INT NOT NULL,
-   calories INT NOT NULL,
-   active_mins INT NOT NULL,
-   activity_date DATE,
-   time_stamp TIMESTAMP(6) 
+   id INT NOT NULL AUTO_INCREMENT
+   , category VARCHAR(50) NOT NULL
+   , carbs_goal INT NOT NULL
+   , protein_goal INT NOT NULL
+   , fat_goal INT NOT NULL
+   , calories INT NOT NULL
+   , active_mins INT NOT NULL
+   , activity_date DATE
+   , time_stamp TIMESTAMP(6) 
+   , PRIMARY KEY (id)
 );
 
 CREATE TABLE challenge
 (
-   id INT(11) AUTO_INCREMENT NOT NULL,
-   title VARCHAR(30) NOT NULL,
-   challenge_type VARCHAR(10) NOT NULL,
-   challenge_extend BOOLEAN,
-   challenge_status VARCHAR(10),
-   amember_id INT(11),
-   PRIMARY KEY (id),
-   FOREIGN KEY (friend_id) REFERENCES friend(id)
+   id INT AUTO_INCREMENT NOT NULL
+   , title VARCHAR(30) NOT NULL
+   , challenge_type VARCHAR(10) NOT NULL
+   , challenge_extend BOOLEAN
+   , challenge_status VARCHAR(10)
+   , PRIMARY KEY (id)
 
 );
