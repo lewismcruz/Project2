@@ -1,0 +1,115 @@
+<<<<<<< HEAD
+{{> navbar/navbar }}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Sign Up Form</h2>
+        <form class="signup">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+=======
+
+{{> navbar/navbar}}
+
+    <div class="container">    
+    <div id="signupbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+        <div class="panel panel-info" >
+          <div class="panel-heading">
+              <div class="panel-title">Sign Up</div>
+          </div>     
+
+          <div style="padding-top:30px" class="panel-body" >
+          <div style="display:none" id="signin-alert" class="alert alert-danger col-sm-12"></div>
+                    
+    <form id="signupform" class="form-horizontal" role="form">             
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="signin-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
+            </div>
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="signin-password" type="password" class="form-control" name="password" placeholder="password">
+          </div>     
+>>>>>>> 1a7bb1420b38e8631aa8a95e28c9797cac43541c
+
+          <div class="form-group">
+            <label for="firstname" class="col-md-3 control-label">First Name</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" name="firstname" placeholder="First Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname" class="col-md-3 control-label">Last Name</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-md-3 control-label">Password</label>
+            <div class="col-md-9">
+                <input type="password" class="form-control" name="passwd" placeholder="Password">
+            </div>
+        </div>
+            
+        <div class="form-group">
+            <label for="height" class="col-md-3 control-label">Height</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" name="height" placeholder="height">
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="weight" class="col-md-3 control-label">Weight</label>
+          <div class="col-md-9">
+              <input type="text" class="form-control" name="weight" placeholder="weight">
+          </div>
+      </div>
+
+      <div class="custom-control custom-radio">
+        <input type="radio" id="male" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio1">Male</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="female" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio2">Female</label>
+      </div>
+
+          {{!-- remember me check box --}}
+          <div class="input-group">
+                    <div class="checkbox">
+                      <label>
+                        <input id="signin-remember" type="checkbox" name="remember" value="1"> Remember me?
+                      </label>
+                    </div>
+          </div>
+          {{!-- can we link the sign in to FB with the same API? --}}
+          <div style="margin-top:10px" class="form-group">
+              <div class="col-sm-12 controls">
+                <a id="btn-signin" href="#" class="btn btn-success">Sign Up  </a>
+                <a id="btn-fbsignin" href="#" class="btn btn-primary">Sign up with Facebook</a>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <div class="col-md-12 control">
+                  <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                      Already have an account?
+                  <a href="login.handlebars" onClick="$('#signinbox').hide(); $('#signupbox').show()">
+                      Log Up Here
+                  </a>
+              </div>
+            </div>
+          </div>    
+      </form>     
+    </div>                     
+    </div>  
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script>
