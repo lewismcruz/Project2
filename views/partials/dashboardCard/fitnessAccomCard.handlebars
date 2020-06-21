@@ -1,16 +1,21 @@
+<div class="row">
+  <div class="card text-white bg-primary mb-3" style="max-width: 30rem;">
+      <div class="card-header">Fitness Stats</div>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
 
-<div class="card" style="width: 18rem;">
-  
-  <!--could be an img tag-->
-  <a href="..." class="card-img-top" alt="..."> </a>
-  <div class="card-body">
-    <h5 class="card-title">Fitness Accomplishments</h5>
-    <p class="card-text">Your Weekly Totals:100</p>
-	<p class="card-text">Minutes active today:100</p>
-	<p class="card-text">Minutes active this week:100</p>
-	<p class="card-text">Minutes active this month:100</p>
+        <p class="card-text">Your Weekly Totals: </p>
+        <p class="card-text">Minutes active today: </p>
+        <p class="card-text">Minutes active this week: </p>
+        <p class="card-text">Minutes active this month: </p>     
 
-	<!--chnage the btn title-->
-    <a href="#" class="btn btn-primary">Fitness Information Tab 'CHANGE ME'</a>
+  <div class="form-group">
+      <label for="addMinutes" control-label>Add active minutes for today:</label>
+    <div class="col-md-9">
+          <input type="text" class="form-control" name="addMinutes" placeholder="Add Minutes">
+      </div>
   </div>
+       <a id="btn-addMinutes" href="#" class="btn btn-success">Add</a>        
+</div>
+</div>
 </div>

@@ -17,7 +17,7 @@ CREATE TABLE userData
     , active_mins INT NULL
     , lifetime_total INT NULL
     , carb_intake INT NULL
-    , protien_intake INT NULL 
+    , protein_intake INT NULL 
     , fat_intake INT NULL
 	, PRIMARY KEY (id)
     

@@ -1,4 +1,4 @@
-INSERT INTO amember (id, amember_id,first_name, last_name, email, gender, _weight, height, active_mins, lifetime_total, carb_intake, protien_intake, fat_intake)
+INSERT INTO amember (id, amember_id,first_name, last_name, email, gender, _weight, height, active_mins, lifetime_total, carb_intake, protein_intake, fat_intake)
 VALUES (1,	1,	"Robert",	"Smith",	"test1email@test.com",	"m",	185,	5.9,	15,	300,	1500,	300,	100);
 VALUES (2,	2,	"Casey",	"Perry",	"test2email@test.com",	"m",	170,	5.7,	22,	405,	1200,	300,	100);
 VALUES (3,	3,	"Jonathan",	"Stanbury",	"test3email@test.com",	"m",	187,	6.3,	23,	325,	2200,	300,	100);
