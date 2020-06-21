@@ -2,7 +2,7 @@
 {
   "development": {
     "username": "root",
-    "password": "brandonSwim11!",
+    "password": "brandonSwim1!",
     "database": "funactiv_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
