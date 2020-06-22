@@ -7,10 +7,11 @@ $(document).ready(() => {
   const lastName = $("input#lastName-input");
   const weight = $("input#weight-input");
   const height = $("input#height-input");
-  const gender = $("input#gender-input");
+  const gender = $("input#male || input#female");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", event => {
+    console.log("clicked")
     event.preventDefault();
     const userData = {
       email: emailInput.val().trim(),
