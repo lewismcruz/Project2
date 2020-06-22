@@ -2,7 +2,7 @@
 const bcrypt = require("bcryptjs");
 // Creating our User model
 module.exports = function(sequelize, DataTypes) {
-  const User = sequelize.define("UserData", {
+  const User = sequelize.define("User", {
     // The email cannot be null, and must be a proper email before creation
     id: {
       allowNull: false,
@@ -18,10 +18,10 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
-    userId: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+    // userId: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
     // The password cannot be null
     password: {
       type: DataTypes.STRING,
@@ -30,19 +30,14 @@ module.exports = function(sequelize, DataTypes) {
     firstName: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: false,
-      validate: {
-        isName: true
-      }
+      unique: false
     },
     lastName: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: false,
-      validate: {
-        isName: true
-      }
+      unique: false
     },
+
     weight: {
       allowNull: false,
       type: DataTypes.INTEGER
@@ -54,23 +49,23 @@ module.exports = function(sequelize, DataTypes) {
     gender: {
       allowNull: false,
       type: DataTypes.STRING
-    },
-    activeMins: {
-      allowNull: false,
-      type: DataTypes.INTEGER
-    },
-    carbIntake: {
-      allowNull: false,
-      type: DataTypes.INTEGER
-    },
-    proteinIntake: {
-      allowNull: false,
-      type: DataTypes.INTEGER
-    },
-    fatIntake: {
-      allowNull: false,
-      type: DataTypes.INTEGER
     }
+    // activeMins: {
+    //   allowNull: true,
+    //   type: DataTypes.INTEGER
+    // },
+    // carbIntake: {
+    //   allowNull: true,
+    //   type: DataTypes.INTEGER
+    // },
+    // proteinIntake: {
+    //   allowNull: true,
+    //   type: DataTypes.INTEGER
+    // },
+    // fatIntake: {
+    //   allowNull: true,
+    //   type: DataTypes.INTEGER
+    // }
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {

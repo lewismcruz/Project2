@@ -11,58 +11,63 @@
           <div style="padding-top:30px" class="panel-body" >
           <div style="display:none" id="signin-alert" class="alert alert-danger col-sm-12"></div>
                     
-    <form id="signupform" class="form-horizontal" role="form">             
+    <form id="signup" class="form-horizontal" role="form">             
             <div style="margin-bottom: 25px" class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="signin-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
+              <input id="email-input" type="text" class="form-control" name="username" value="" placeholder="Email">                                        
             </div>
             <div style="margin-bottom: 25px" class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <input id="signin-password" type="password" class="form-control" name="password" placeholder="password">
+              <input id="password-input" type="password" class="form-control" name="password" placeholder="Password">
           </div>     
 
           <div class="form-group">
             <label for="firstname" class="col-md-3 control-label">First Name</label>
             <div class="col-md-9">
-                <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                <input type="text" class="form-control" name="firstname" id="firstName-input" placeholder="First Name">
             </div>
         </div>
         <div class="form-group">
             <label for="lastname" class="col-md-3 control-label">Last Name</label>
             <div class="col-md-9">
-                <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                <input type="text" class="form-control" name="lastname" id="lastName-input" placeholder="Last Name">
             </div>
         </div>
-        <div class="form-group">
+        {{!-- <div class="form-group">
             <label for="password" class="col-md-3 control-label">Password</label>
             <div class="col-md-9">
-                <input type="password" class="form-control" name="passwd" placeholder="Password">
+                <input type="password" class="form-control" id="password-input" name="passwd" placeholder="Password">
             </div>
-        </div>
+        </div> --}}
             
         <div class="form-group">
             <label for="height" class="col-md-3 control-label">Height</label>
             <div class="col-md-9">
-                <input type="text" class="form-control" name="height" placeholder="height">
+                <input type="text" class="form-control" id="height-input" name="height" placeholder="Height in inches">
             </div>
         </div>
 
         <div class="form-group">
           <label for="weight" class="col-md-3 control-label">Weight</label>
           <div class="col-md-9">
-              <input type="text" class="form-control" name="weight" placeholder="weight">
+              <input type="text" class="form-control" id="weight-input" name="weight" placeholder="Weight in pounds">
           </div>
-      </div>
+        </div>
 
-      <div class="custom-control custom-radio">
-        <input type="radio" id="male" name="customRadio" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio1">Male</label>
+        <div class="form-group">
+          <label for="gender" class="col-md-3 control-label">Gender</label>
+          <div class="col-md-9">
+              <input type="text" class="form-control" id="gender-input" name="gender" placeholder="Gender">
+          </div>
+        </div>
+      {{!-- <div class="form-check">
+        <input class="form-check-input" type="radio" id="male exampleRadios1" name="male" value="option1">
+        <label class="form-check-label" for="customRadio1">Male</label>
       </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="female" name="customRadio" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio2">Female</label>
-      </div>
-
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="female exampleRadios1" name="female" value="option2">
+        <label class="form-check-label" for="customRadio2">Female</label>
+      </div> --}}
           {{!-- remember me check box --}}
           <div class="input-group">
                     <div class="checkbox">
@@ -74,8 +79,8 @@
           {{!-- can we link the sign in to FB with the same API? --}}
           <div style="margin-top:10px" class="form-group">
               <div class="col-sm-12 controls">
-                <a id="btn-signin" href="#" class="btn btn-success">Sign Up  </a>
-                <a id="btn-fbsignin" href="#" class="btn btn-primary">Sign up with Facebook</a>
+                <button class="btn btn-success" id="btn-signin submit" type="submit"> Sign Up </button>
+                <button class="btn btn-primary" type="button" id="btn-fbsignin" href="#" disabled>Sign up with Facebook</button>
               </div>
           </div>
 
@@ -83,7 +88,7 @@
               <div class="col-md-12 control">
                   <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
                       Already have an account?
-                  <a href="login.handlebars" onClick="$('#signinbox').hide(); $('#signupbox').show()">
+                  <a href="/login" onClick="$('#signinbox').hide(); $('#signupbox').show()">
                       Log Up Here
                   </a>
               </div>
@@ -93,6 +98,7 @@
     </div>                     
     </div>  
     </div>
+    </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script> 

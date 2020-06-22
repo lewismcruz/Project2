@@ -3,22 +3,22 @@
 
 <div class="container">    
     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-        <div class="panel panel-info" >
+        <div class="panel panel-info">
           <div class="panel-heading">
-              <div class="panel-title">Log In</div>
+              <div class="panel-title"><h2>Log In</h2></div>
           </div>     
 
-          <div style="padding-top:30px" class="panel-body" >
+          <div style="padding-top:30px" class="panel-body">
           <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                     
-    <form id="loginform" class="form-horizontal" role="form">             
+    <form id="login" class="form-horizontal" role="form">             
             <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
+                        <input id="email-input" type="text" class="form-control" name="username" value="" placeholder="Email">                                        
             </div>
             <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                        <input id="password-input" type="password" class="form-control" name="password" placeholder="Password">
           </div>          
           {{!-- remember me check box --}}
           <div class="input-group">
@@ -31,8 +31,8 @@
           {{!-- can we link the sign in to FB with the same API? --}}
           <div style="margin-top:10px" class="form-group">
               <div class="col-sm-12 controls">
-                <a id="btn-login" href="#" class="btn btn-success">Login  </a>
-                <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
+                <button class="btn btn-success" id="btn-signin submit" type="submit"> Login </button>
+                <button class="btn btn-primary" type="button" id="btn-fbsignin" href="#" disabled>Sign up with Facebook</button>
               </div>
           </div>
 
@@ -40,7 +40,7 @@
               <div class="col-md-12 control">
                   <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
                       Don't have an account?
-                  <a href="signup.handlebars" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                  <a href="/signup" onClick="$('#loginbox').hide(); $('#signupbox').show()">
                       Sign Up Here
                   </a>
               </div>
@@ -51,3 +51,7 @@
     </div>                     
     </div>  
     </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
