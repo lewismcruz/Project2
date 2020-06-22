@@ -74,19 +74,3 @@ $(document).ready(() => {
 
 });
 
-// From the user input form on what they ate and activity done
-// Use let because these variables will change as users update information
-
-
-/*
-let weight = $("#weight");
-let height = $("#height");
-let gender = $("#gender");
-let age = $("#age");
-const run = $("#run");
-const walk = $("#walk");
-const bike = $("#bike");
-*/
-
-
-
