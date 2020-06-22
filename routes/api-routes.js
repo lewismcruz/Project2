@@ -17,25 +17,11 @@ module.exports = function(app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup", (req, res) => {
-    //console.log(db);
-    //console.log("----------------------------");
-    //console.log(db.User);
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      weight: req.body.weight,
-      height: req.body.height,
-      gender: req.body.gender
-    })
-      .then(() => {
-        res.redirect(307, "/api/login");
-      })
-      .catch(err => {
-        res.status(401).json(err);
-      });
+  app.post("/api/signup", (req, res) => { 
+    db.User.create(req.body).then(function(dbPost) {
+      console.log(dbPost);
+      res.json(dbPost);
+    });
   });
 
   // Route for logging user out
