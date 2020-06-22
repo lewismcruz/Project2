@@ -3,7 +3,6 @@ const db = require("../models");
 const passport = require("../config/passport");
 
 module.exports = function(app) {
-
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     res.json(req.body);
   });
@@ -27,6 +26,11 @@ module.exports = function(app) {
   app.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/");
+  });
+
+  app.get("/api/nutrition", (req, res) => {
+    console.log(req.body);
+    //res.redirect("/");
   });
 
   app.get("/api/user_data", (req, res) => {
