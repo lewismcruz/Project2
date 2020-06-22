@@ -75,7 +75,7 @@ module.exports = function(app) {
       "https://www.googleapis.com/auth/fitness.body.write"
     ];
     const url = oauth2Client.generateAuthUrl({
-      access_type: "online",
+      access_type: "offline",
       scope: scopes,
       state: JSON.stringify({
         callbackURL: req.body.callbackURL,
@@ -103,7 +103,7 @@ module.exports = function(app) {
     console.log(tokens);
     console.log(tokens);
 
-    const stepArray = [];
+    const minutesArray = [];
 
     try {
       const result = await axios({
