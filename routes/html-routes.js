@@ -42,6 +42,10 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/nutrition", (req, res) => {
+    res.render("foodform");
+  });
+
 //   app.get("/test/:id", (req, res) => {
 //     db.User.findOne({
 //       where: {
