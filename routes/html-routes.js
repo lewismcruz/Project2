@@ -41,24 +41,24 @@ module.exports = function(app) {
     });
   });
 
-//   app.get("/test/:id", (req, res) => {
-//     db.User.findOne({
-//       where: {
-//         id: req.params.id
-//       }
-//     }).then(user => {
-//       // const user = [];
+  //   app.get("/test/:id", (req, res) => {
+  //     db.User.findOne({
+  //       where: {
+  //         id: req.params.id
+  //       }
+  //     }).then(user => {
+  //       // const user = [];
 
-//       // for (let i = 0; i < dbUser.length; i++) {
-//       //   const user1 = {};
-//       //   (user1.firstName = dbUser[i].firstName);
-//       //     (user1.lastName = dbUser[i].lastName);
-//       //     (user1.createdAt = dbUser[i].createdAt);
-//       //   user.push(user1);
-//       // }
+  //       // for (let i = 0; i < dbUser.length; i++) {
+  //       //   const user1 = {};
+  //       //   (user1.firstName = dbUser[i].firstName);
+  //       //     (user1.lastName = dbUser[i].lastName);
+  //       //     (user1.createdAt = dbUser[i].createdAt);
+  //       //   user.push(user1);
+  //       // }
 
-//       // console.log(user);
-//       res.render("test", user);
-//     });
-//   });
+  //       // console.log(user);
+  //       res.render("test", user);
+  //     });
+  //   });
 };
