@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Members</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+  crossorigin="anonymous"><link href="stylesheets/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand-lg navbar-light text-white" style="background-color: #26bd35;">
+    <a class="navbar-brand" href="#">
+      <img src="/public/stylesheets/img/funACTIV.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+      funACTIV
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Fitness</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nutrition</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Welcome <span class="member-name"></span></h2>
+      </div>
+    </div>
+
+    <div class="card text-white bg-info mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+      <div class="col-md-4">
+          <img src="https://via.placeholder.com/100" class="card-img" alt="...">
+          <h5 class="card-title">User Name<br>
+          Location<br>
+          Member Since: 2020<br>
+          Goals: Gain Muscle<br>
+        </h5>
+
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <p class="card-text">Fitness Accomplishments: 300 active minutes this week!</p>
+            <p class="card-text">Nutrition Accomplishments: 300 active minutes this week!<br>
+            Calories: <br>
+            Carbs:<br>
+            Protein:<br>
+            Fats:</p>
+
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/members.js"></script>
+
+</body>
+
+</html>

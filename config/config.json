@@ -1,10 +1,11 @@
 
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "funactiv_db",
-    "host": "127.0.0.1",
+    "username": "c5lgym0dvvuoeqyn",
+    "password": "g0epv4oi6g5f9wh0",
+    "database": "qlnci43hmpzb6sqo",
+    "port"    : 3306,
+    "host": "d9c88q3e09w6fdb2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
