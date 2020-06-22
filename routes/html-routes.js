@@ -9,15 +9,16 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/members/" + req.user.id);
     }
     res.render("../views/login");
   });
 
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
+    console.log(req + " hello");
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/members/" + req.user.id);
     }
     res.render("../views/login");
   });
@@ -29,38 +30,35 @@ module.exports = function(app) {
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, (req, res) => {
-
-    db.User.findAll({
-    }).then(function(dbUser) {
-      var user= dbUser;
-      res.render("../views/test", user);
-    });
-  
-  });
-
-  app.get("/test", (req, res) => {
-
-    db.User.findAll({
-    }).then(function(dbUser) {
-      var user= {
-// firstName: dbUser[0].firstName,
-// lastName: dbUser[0].lastName,
-// createdAt: dbUser[0].createdAt
-
-      };
-
-      for(var i=0;i<dbUser.length;i++){
-        var user1={};
-        user1.firstName= dbUser[i].firstName,
-        user1.lastName= dbUser[i].lastName,
-        user1.createdAt= dbUser[i].createdAt
-        user.push(user1);
+  app.get("/members/:id", isAuthenticated, (req, res) => {
+    db.User.findOne({
+      where: {
+        id: req.params.id
       }
-      
-      console.log(user);
-      res.render("../views/test", user);
+    }).then(user => {
+      console.log(user.dataValues);
+      res.render("membersDashboard", user.dataValues);
     });
-  
   });
+
+//   app.get("/test/:id", (req, res) => {
+//     db.User.findOne({
+//       where: {
+//         id: req.params.id
+//       }
+//     }).then(user => {
+//       // const user = [];
+
+//       // for (let i = 0; i < dbUser.length; i++) {
+//       //   const user1 = {};
+//       //   (user1.firstName = dbUser[i].firstName);
+//       //     (user1.lastName = dbUser[i].lastName);
+//       //     (user1.createdAt = dbUser[i].createdAt);
+//       //   user.push(user1);
+//       // }
+
+//       // console.log(user);
+//       res.render("test", user);
+//     });
+//   });
 };
