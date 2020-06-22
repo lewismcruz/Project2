@@ -33,8 +33,7 @@ module.exports = function(app) {
   //all user data
   app.get("/api/users", (req, res) => {
     //make connection to db and get user data
-    db.User.findAll({
-    }).then(function(dbUser) {
+    db.User.findAll({}).then(dbUser => {
       res.json(dbUser);
     });
     //res.json("/");

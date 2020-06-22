@@ -1,3 +1,5 @@
+// const moment = require('moment'); // require
+// moment().format();
 // Requiring path to so we can use relative routes to our HTML files
 //const path = require("path");
 
@@ -31,35 +33,46 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
-    console.log(req.user, " HI MOM");
     db.User.findOne({
       where: {
         id: req.user.id
       }
     }).then(user => {
-      console.log(user.dataValues);
-      res.render("membersDashboard", user.dataValues);
+      const timeEl = JSON.stringify(user.dataValues.createdAt);
+      const newTime = timeEl.split("-");
+      const sliceTime = newTime[0].slice(1);
+      // console.log(timeEl);
+      // console.log(newTime);
+      // console.log(sliceTime);
+
+      const userObj = {
+        firstName: user.dataValues.firstName,
+        lastName: user.dataValues.lastName,
+         timer: sliceTime
+      };
+      console.log(userObj);
+      res.render("membersDashboard", userObj);
     });
   });
 
-//   app.get("/test/:id", (req, res) => {
-//     db.User.findOne({
-//       where: {
-//         id: req.params.id
-//       }
-//     }).then(user => {
-//       // const user = [];
+  //   app.get("/test/:id", (req, res) => {
+  //     db.User.findOne({
+  //       where: {
+  //         id: req.params.id
+  //       }
+  //     }).then(user => {
+  //       // const user = [];
 
-//       // for (let i = 0; i < dbUser.length; i++) {
-//       //   const user1 = {};
-//       //   (user1.firstName = dbUser[i].firstName);
-//       //     (user1.lastName = dbUser[i].lastName);
-//       //     (user1.createdAt = dbUser[i].createdAt);
-//       //   user.push(user1);
-//       // }
+  //       // for (let i = 0; i < dbUser.length; i++) {
+  //       //   const user1 = {};
+  //       //   (user1.firstName = dbUser[i].firstName);
+  //       //     (user1.lastName = dbUser[i].lastName);
+  //       //     (user1.createdAt = dbUser[i].createdAt);
+  //       //   user.push(user1);
+  //       // }
 
-//       // console.log(user);
-//       res.render("test", user);
-//     });
-//   });
+  //       // console.log(user);
+  //       res.render("test", user);
+  //     });
+  //   });
 };
