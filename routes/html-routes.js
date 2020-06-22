@@ -9,7 +9,7 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members/" + req.user.id);
+      res.redirect("/members");
     }
     res.render("../views/login");
   });
@@ -18,7 +18,7 @@ module.exports = function(app) {
     // If the user already has an account send them to the members page
     console.log(req + " hello");
     if (req.user) {
-      res.redirect("/members/" + req.user.id);
+      res.redirect("/members");
     }
     res.render("../views/login");
   });
@@ -30,10 +30,11 @@ module.exports = function(app) {
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members/:id", isAuthenticated, (req, res) => {
+  app.get("/members", isAuthenticated, (req, res) => {
+    console.log(req.user, " HI MOM");
     db.User.findOne({
       where: {
-        id: req.params.id
+        id: req.user.id
       }
     }).then(user => {
       console.log(user.dataValues);
