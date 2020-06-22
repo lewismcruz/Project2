@@ -31,18 +31,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       unique: false
-      // validate: {
-      //   isName: true
-      
     },
     lastName: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: false
-      // validate: {
-      //   isName: true
-      },
-    
+    },
+
     weight: {
       allowNull: false,
       type: DataTypes.INTEGER
@@ -54,7 +49,7 @@ module.exports = function(sequelize, DataTypes) {
     gender: {
       allowNull: false,
       type: DataTypes.STRING
-    },
+    }
     // activeMins: {
     //   allowNull: true,
     //   type: DataTypes.INTEGER

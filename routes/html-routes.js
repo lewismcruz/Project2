@@ -10,7 +10,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.render("../views/index");
   });
 
   app.get("/login", (req, res) => {
@@ -18,7 +18,12 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("../views/login");
+  });
+
+  app.get("/signup", (req, res) => {
+    // If the user already has an account send them to the members page
+    res.render("../views/signup");
   });
 
   // Here we've add our isAuthenticated middleware to this route.
