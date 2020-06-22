@@ -3,6 +3,7 @@
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const db = require("../models");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -10,7 +11,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.render("../views/index");
+    res.render("../views/login");
   });
 
   app.get("/login", (req, res) => {
@@ -29,6 +30,37 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
-    res.render("../views/members");
+
+    db.User.findAll({
+    }).then(function(dbUser) {
+      var user= dbUser;
+      res.render("../views/test", user);
+    });
+  
+  });
+
+  app.get("/test", (req, res) => {
+
+    db.User.findAll({
+    }).then(function(dbUser) {
+      var user= {
+// firstName: dbUser[0].firstName,
+// lastName: dbUser[0].lastName,
+// createdAt: dbUser[0].createdAt
+
+      };
+
+      for(var i=0;i<dbUser.length;i++){
+        var user1={};
+        user1.firstName= dbUser[i].firstName,
+        user1.lastName= dbUser[i].lastName,
+        user1.createdAt= dbUser[i].createdAt
+        user.push(user1);
+      }
+      
+      console.log(user);
+      res.render("../views/test", user);
+    });
+  
   });
 };

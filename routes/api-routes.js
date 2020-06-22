@@ -30,6 +30,16 @@ module.exports = function(app) {
       });
   });
 
+  //all user data
+  app.get("/api/users", (req, res) => {
+    //make connection to db and get user data
+    db.User.findAll({
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+    //res.json("/");
+  });
+
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
