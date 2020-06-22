@@ -6,21 +6,15 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    first_name: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: false,
-      validate: {
-        isName: true
-      }
+      unique: false
     },
-    last_name: {
+    lastName: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: false,
-      validate: {
-        isName: true
-      }
+      unique: false
     },
     email: {
       allowNull: false,
@@ -42,23 +36,23 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       type: DataTypes.INTEGER
     },
-    active_mins: {
+    activeMins: {
       allowNull: false,
       type: DataTypes.INTEGER
     },
-    lifetime_total: {
+    lifetimeTotal: {
       allowNull: false,
       type: DataTypes.INTEGER
     },
-    carb_intake: {
+    carbIntake: {
       allowNull: false,
       type: DataTypes.INTEGER
     },
-    protein_intake: {
+    proteinIntake: {
       allowNull: false,
       type: DataTypes.INTEGER
     },
-    fat_intake: {
+    fatIntake: {
       allowNull: false,
       type: DataTypes.INTEGER
     },
