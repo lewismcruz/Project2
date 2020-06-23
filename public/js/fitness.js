@@ -3,63 +3,44 @@
 // user must do in order to burn X amount of calories according to what they
 // provided as food they ate.
 $(document).ready(() => {
-  const gender = $("#gender")
-    .val()
-    .trim();
-  console.log(gender);
-  const weight = $("#weight")
-    .val()
-    .trim();
-  console.log(weight);
-  const height = $("#height")
-    .val()
-    .trim();
-  console.log(height);
-  const age = $("#age")
-    .val()
-    .trim();
-  console.log(age);
-  const run = $("#runTime")
-    .val()
-    .trim();
-  console.log(run);
-  const walk = $("#walkTime")
-    .val()
-    .trim();
-  console.log(walk);
-  const bike = $("#bikeTime")
-    .val()
-    .trim();
-  console.log(bike);
-  const settings = {
-    url: "https://trackapi.nutritionix.com/v2/natural/exercise",
-    method: "POST",
-    timeout: 0,
-    headers: {
-      "x-app-key": "8a9544917169c7687bec8663146d894c",
-      "Content-Type": "application/json",
-      "x-app-id": "15c44cc6"
-    },
-    //"data": JSON.stringify({"query":"ran 3 miles","gender":"male","weight_kg":85,"height_cm":155.5,"age":35}),
-    data: JSON.stringify({
-      query:
-        gender +
-        " " +
-        weight +
-        " " +
-        height +
-        " " +
-        age +
-        " " +
-        run +
-        " " +
-        walk +
-        " " +
-        bike
-    })
-  };
+  $("#caloriesButton").on("click", event => {
+    event.preventDefault();
+    const run = $("#runTime")
+      .val()
+      .trim();
+    const settings = {
+      url: "https://trackapi.nutritionix.com/v2/natural/exercise",
+      method: "POST",
+      timeout: 0,
+      headers: {
+        "x-app-key": "8a9544917169c7687bec8663146d894c",
+        "Content-Type": "application/json",
+        "x-app-id": "15c44cc6"
+      },
+      //"data": JSON.stringify({"query":"ran 3 miles","gender":"male","weight_kg":85,"height_cm":155.5,"age":35}),
+      data: JSON.stringify({
+        query:
+          run
+      })
+    };
 
-  $.ajax(settings).done(response => {
-    console.log(response);
+    $.ajax(settings).then(res => {
+        console.log(res);
+        const resObjConstructor = `
+        <div class="container">
+            <div class="row">
+              <div class="col">
+           <p>
+           <h5>Activity: ${res.exercises[0].name}</h5>
+           <h5>Active Mins: ${res.exercises[0].duration_min}</h5>
+           <h5>Calories Burned: ${res.exercises[0].nf_calories}</h5>
+           </p>
+              </div>
+           </div>
+        </div>
+      `;
+            const element = document.getElementById("activity");
+            element.innerHTML = resObjConstructor;
+    });
   });
 });
