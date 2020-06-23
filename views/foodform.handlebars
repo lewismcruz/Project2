@@ -1,3 +1,9 @@
+<div class"container">
+
+   {{> navbar/navbar}}
+
+</div>
+
 <form id="signup" class="form-horizontal" role="form">             
 
 {{!-- field --}}
@@ -34,126 +40,7 @@
 
 {{!-- submit --}}
 
-<h2>Input which activity you performed today.</h2>
-<p>You may enter: I ran for 30 mins or I ran 2 miles or I cycled for 50 mins.</p>
-<p>Enter each activity in each field provided. Only 3 items available at this time.</p>
-<p>This app will then show you how many calories you consumed by doing your activity.</p>
-<p>Use this to plan your nutritional requirements and workout routines.</p>
-
-<div class="form-group">
-  <label for="gender" class="col-md-3 control-label">Gender</label>
-     <div class="col-md-9">
-      <input type="text" class="form-control" name="gender" id="gender" placeholder="Gender">
-  </div>
-</div>
-
-<div class="form-group">
-  <label for="weight" class="col-md-3 control-label">Weight</label>
-    <div class="col-md-9">
-      <input type="text" class="form-control" name="weight" id="weight" placeholder="Weight">
-    </div>
-</div>
-
-<div class="form-group">
-  <label for="height" class="col-md-3 control-label">Height</label>
-    <div class="col-md-9">
-     <input type="text" class="form-control" name="height" id="height" placeholder="Height">
-   </div>
-</div>
-
-<div class="form-group">
-  <label for="age" class="col-md-3 control-label">Age</label>
-   <div class="col-md-9">
-     <input type="text" class="form-control" name="age" id="age" placeholder="Age">
-   </div>
-</div>
-
-<div class="form-group">
-  <label for="run" class="col-md-3 control-label">Minutes Run</label>
-    <div class="col-md-9">
-     <input type="text" class="form-control" name="run" id="runTime" placeholder="Minutes Run">
-   </div>
-</div>
-
-{{!-- field --}}
-  
-<div class="form-group">
-  <label for="walk" class="col-md-3 control-label">Minutes Walked</label>
-   <div class="col-md-9">
-     <input type="text" class="form-control" name="walk" id="walkTime" placeholder="Minutes Walked">
-   </div>
-</div>
-
-   {{!-- field --}}
-<div class="form-group">
-  <label for="bike" class="col-md-3 control-label">Minutes Cycling</label>
-   <div class="col-md-9">
-    <input type="text" class="form-control" name="bike" id="bikeTime" placeholder="Minutes Cycling">
-  </div>
-</div>
-
-<div style="margin-top:10px" class="form-group">
-  <div class="col-sm-12 controls">
-    <button class="btn btn-success" id="caloriesButton" type="submit"> Calories</button>
-  </div>
- </div>
-</div>
-</div>    
-</form> 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/nutritionix.js"></script>
-<script type="text/javascript">
-
-// The below code fills in the first row of the table
-    //const food = "food1";
-    const queryURL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
-
-    $.ajax({
-      url: queryURL,
-      method: "POST",
-      timeout: 0,
-      headers: {
-        "x-app-key": "8a9544917169c7687bec8663146d894c",
-        "Content-Type": "application/json",
-        "x-app-id": "15c44cc6"
-      },
-    }).then(function(response) {
-      // Create a new table row element
-      var tRow = $("<tr>");
-
-      // Methods run on jQuery selectors return the selector they we run on
-      // This is why we can create and save a reference to a td in the same statement we update its text
-      var food1 = $("<td>").text(response.food0);
-      var food1Cal = $("<td>").text(response.food0.metadata.nf_calories + "calories");
-      var food2 = $("<td>").text(response.food2);
-      var food1Cal = $("<td>").text(response.food0.metadata.nf_calories + "calories");    
-      var food3 = $("<td>").text(response.food3);
-      var age = $("<td>").text(response.age);
-      var weight = $("<td>").text(response.weight);
-      var height = $("<td>").text(response.height);
-      var gender = $("<td>").text(response.gender);
-      var 
-
-        
-      // Append the newly created table data to the table row
-      tRow.append(food1, food2, food3, age, weight, height, gender,);
-      // Append the table row to the table body
-      $("tbody").append(tRow);
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
-
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="js/nutritionix.js"></script>
