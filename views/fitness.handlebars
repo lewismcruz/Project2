@@ -1,0 +1,49 @@
+
+{{> navbar/navbar}}
+
+<br>
+<div class="form-group container">
+
+  <div class="card text-center">
+  <div class="card-header" style="background-color: #3498db">
+    <h2>Input your Activity.</h2>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">Add minutes or distance.</h5>
+    <p class="card-text">Example: I did 30 mins of yoga, or I ran 2 miles, or I cycled for 50 mins.</p>
+
+    <label for="run" class="col-md control-label"></label>
+     <div class="col-md">
+        <input type="text" class="form-control" name="run" id="runTime" placeholder="Please include miles or minutes.">
+     </div>&nbsp;&nbsp;&nbsp;
+
+     
+<br>
+    <button class="btn btn-success controls" id="caloriesButton" type="submit">Activity Tracker</button>
+  </div>
+  <div class="card-footer" style="background-color:#3498db; color:white" > 3 minutes ago</div>
+</div>
+<br>
+
+<div class="col-md">
+<div class="card">
+  <div class="card-header">
+    Weekly Fitness Minutes
+  </div>
+    <div class="container" id="activity"></div>
+
+  <div class="card-body">
+   {{> charts/fitnessChart}}
+  </div>
+</div>
+</div>
+
+</div>
+   
+  {{> footer/footer}}
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="js/fitness.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+      <script src="./js/barChart.js"></script>

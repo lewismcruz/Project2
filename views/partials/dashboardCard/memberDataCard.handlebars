@@ -1,17 +1,24 @@
-<div class="card" style="width: 18rem;">
-  
-  <!--could be an img tag-->
-  <a href="..." class="card-img-top" alt="..."> </a>
-  <div class="card-body">
-    <h5 class="card-title">Member Data</h5>
-    <h5 class="card-title">100<br>
-          Location 100<br>
-          Member Since: 100<br>
-          Plan/Goal: 100<br>
-    </h5>
 
 
-	<!--chnage the btn title-->
-    <a href="#" class="btn btn-primary">Fitness Information Tab 'CHANGE ME'</a>
+
+<div class="jumbotron jumbotron-fluid max-height: 500px">
+ <div class="container">
+   <div class="row">
+      <div class="col-md-5">
+        <img src="https://fotosforthefuture.com/wp-content/gallery/headshots/IMG_0778.jpg" class="card-img" alt="Profile Picture">
+      </div>
+      
+      <div class="col-md-6" style="text-align: center">    
+        <h1 class="display-4">{{this.firstName}} {{this.lastName}}</h1>
+        <h4>    
+          Houston, TX
+          Member Since: {{this.timer}}<br>
+          Goal: Lean Plan <br>
+        </h4>
+      </div>
+
+    </div>
   </div>
 </div>
+
+

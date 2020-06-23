@@ -1,47 +1,50 @@
-// Requiring path to so we can use relative routes to our HTML files
-const path = require("path");
-const express = require("express");
-const exphbs = require("express-handlebars");
-const router = express.Router();
-const userObj = require("../models/user.js");
-// Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const db = require("../models");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
-     //If the user already has an account send them to the members page
-     if (req.user) {
-      res.redirect("/members");
-     }
-    res.render("index");
+    if (req.user) {
+      res.redirect("members");
+    }
+    res.render("login");
+  });
+
+  app.get("/login", (req, res) => {
+    if (req.user) {
+      res.redirect("members");
+    }
+    res.render("login");
   });
 
   app.get("/signup", (req, res) => {
-    // If the user already has an account send them to the members page
-    // if (req.user) {
-    //   res.redirect("/members");
-    // }
     res.render("signup");
   });
 
-  app.get("/dashboard", (req, res) => {
-    // If the user already has an account send them to the members page
-    // if (req.user) {
-    //   res.redirect("/members");
-    // }
-    res.render("membersDashboard");
-  });
-  // app.get("/login", (req, res) => {
-  //   // If the user already has an account send them to the members page
-  //   if (req.user) {
-  //     res.redirect("/members");
-  //   }
-  //   res.sendFile(path.join(__dirname, "../public/login.html"));
-  // });
+  app.get("/members", isAuthenticated, (req, res) => {
+    db.User.findOne({
+      where: {
+        id: req.user.id
+      }
+    }).then(user => {
+      const timeEl = JSON.stringify(user.dataValues.createdAt);
+      const newTime = timeEl.split("-");
+      const sliceTime = newTime[0].slice(1);
 
-  // // Here we've add our isAuthenticated middleware to this route.
-  // // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  // app.get("/members", isAuthenticated, (req, res) => {
-  //   res.sendFile(path.join(__dirname, "../views/membersDashboards.handlebars"));
-  // });
+      const userObj = {
+        firstName: user.dataValues.firstName,
+        lastName: user.dataValues.lastName,
+        timer: sliceTime
+      };
+      console.log(userObj);
+      res.render("membersDashboard", userObj);
+    });
+  });
+
+  app.get("/nutrition", isAuthenticated, (req, res) => {
+    res.render("foodform");
+  });
+
+  app.get("/fitness", isAuthenticated, (req, res) => {
+    res.render("fitness");
+  });
 };

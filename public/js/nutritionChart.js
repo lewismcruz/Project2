@@ -10,29 +10,8 @@ const day = [
   "Friday",
   "Saturday"
 ];
-
-// eslint-disable-next-line no-unused-vars
-const fitnessChart = new Chart(ctx, {
-  type: "bar",
-  data: {
-    labels: day,
-    datasets: [
-      {
-        label: "Goal",
-        data: goal,
-        backgroundColor: "#3498db"
-      },
-      {
-        label: "Actual",
-        data: actual,
-        backgroundColor: "#2ecc71"
-      }
-    ]
-  }
-});
-
 // eslint-disable-next-line no-var
-var ctx2 = document.getElementById("nutritionChart").getContext("2d");
+var ctx2 = document.getElementById("nutritionChart1").getContext("2d");
 const nutritionChart = new Chart(ctx2, {
   type: "pie",
   data: {

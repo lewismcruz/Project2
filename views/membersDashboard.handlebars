@@ -1,20 +1,50 @@
- <div class="container">
+
 
    {{> navbar/navbar}}
+<br>
+   {{> dashboardCard/memberDataCard}}
+   {{#each user}}
+    <p>{{dbUser}}</p>
+      
+  {{/each}}
+  <br>
+<div class="container">
+<div class="row">
+
+<div class="col-md-6">
+<div class="card">
+  <div class="card-header">
+    Weekly Fitness Minutes
+  </div>
+  <div class="card-body">
+   {{> charts/fitnessChart}}
+  </div>
+</div>
 </div>
 
-<div class="container">
-   <div class="row">
-    {{> dashboardCard/userProfilePicCard}}
-    {{> dashboardCard/memberDataCard}}
-   </div>
+<br>
 
-   <div class="row">
+<div class="col-md-6">
+<div class="card">
+  <div class="card-header">
+    Daily Nutrition Log
+  </div>
+  <div class="card-body">
+   {{> charts/nuChart}}
+  </div>
+</div>
+</div>
 
-    {{> dashboardCard/userDataCard}}
-    {{> dashboardCard/fitnessAccomCard}}
-    {{> dashboardCard/nutritionAccomCard}}
-
-   </div>
- </div>
+</div>
+</div>
+<br>
+ {{> footer/footer}}
  
+ 
+
+ 
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./js/barChart.js"></script>
