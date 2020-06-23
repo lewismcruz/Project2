@@ -39,11 +39,14 @@ module.exports = function(app) {
       res.render("membersDashboard", userObj);
     });
   });
-  app.get("/goals", (req, res) => {
-    res.render("goalschoice");
+
+  app.get("/nutrition", isAuthenticated, (req, res) => {
+    
+    res.render("foodform");
   });
 
-  app.get("/nutrition", (req, res) => {
-    res.render("foodform");
+  app.get("/fitness", isAuthenticated, (req, res) => {
+    
+    res.render("fitness");
   });
 };

@@ -9,20 +9,7 @@ $(document).ready(() => {
     console.log(foodItem2);
     const foodItem3 = $("#food3").val().trim();
     console.log(foodItem3);
-    const gender = $("#gender").val().trim();
-    console.log(gender);
-    const weight = $("#weight").val().trim();
-    console.log(weight);
-    const height = $("#height").val().trim();
-    console.log(height);
-    const age = $("#age").val().trim();
-    console.log(age);
-    const run = $("#runTime").val().trim();
-    console.log(run);
-    const walk = $("#walkTime").val().trim();
-    console.log(walk);
-    const bike = $("#bikeTime").val().trim();
-    console.log(bike);
+    
     
     //function postNutrition(foodItem1, foodItem2, foodItem3) {
     
@@ -42,14 +29,4 @@ $(document).ready(() => {
     $.ajax(settings).done(function (response) {
       console.log(response);
     });
-    
-
-
-
-
-
-
-
-
-
 });
