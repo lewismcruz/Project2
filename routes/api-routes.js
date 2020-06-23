@@ -29,7 +29,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/nutrition", (req, res) => {
-    console.log(req.body);
+    console.log(req.body, "TEST", res);
     res.json(req.body);
   });
 
