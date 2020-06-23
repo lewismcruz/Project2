@@ -1,3 +1,9 @@
+<div class"container">
+
+   {{> navbar/navbar}}
+
+</div>
+
 <form id="signup" class="form-horizontal" role="form">             
            {{!-- field --}}
          
@@ -26,56 +32,7 @@
             </div>
         </div>
 {{!-- submit --}}
-<div class="form-group">
-    <h2>Input which activity you performed today.</h2>
-    <p>You may enter: I ran for 30 mins or I ran 2 miles or I cycled for 50 mins.</p>
-    <p>Enter each activity in each field provided. Only 3 items available at this time.</p>
-    <p>This app will then show you how many calories you consumed by doing your activity.</p>
-    <p>Use this to plan your nutritional requirements and workout routines.</p>
-    <label for="gender" class="col-md-3 control-label">Gender</label>
-     <div class="col-md-9">
-        <input type="text" class="form-control" name="gender" id="gender" placeholder="Gender">
-     </div>
-    <label for="weight" class="col-md-3 control-label">Weight</label>
-     <div class="col-md-9">
-        <input type="text" class="form-control" name="weight" id="weight" placeholder="Weight">
-     </div>
-    <label for="height" class="col-md-3 control-label">Height</label>
-     <div class="col-md-9">
-        <input type="text" class="form-control" name="height" id="height" placeholder="Height">
-     </div>
-     <label for="age" class="col-md-3 control-label">Age</label>
-     <div class="col-md-9">
-        <input type="text" class="form-control" name="age" id="age" placeholder="Age">
-     </div>
-    <label for="run" class="col-md-3 control-label">Minutes Run</label>
-     <div class="col-md-9">
-        <input type="text" class="form-control" name="run" id="runTime" placeholder="Minutes Run">
-     </div>
-    </div>
-        {{!-- field --}}
-    <div class="form-group">
-    <label for="walk" class="col-md-3 control-label">Minutes Walked</label>
-        <div class="col-md-9">
-         <input type="text" class="form-control" name="walk" id="walkTime" placeholder="Minutes Walked">
-            </div>
-        </div>
-    {{!-- field --}}
-        <div class="form-group">
-            <label for="bike" class="col-md-3 control-label">Minutes Cycling</label>
-            <div class="col-md-9">
-                <input type="text" class="form-control" name="bike" id="bikeTime" placeholder="Minutes Cycling">
-            </div>
-        </div>
 
-          <div style="margin-top:10px" class="form-group">
-              <div class="col-sm-12 controls">
-                <button class="btn btn-success" id="caloriesButton" type="submit"> Calories</button>
-              </div>
-          </div>
-            </div>
-          </div>    
-      </form> 
 
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

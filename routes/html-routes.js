@@ -33,7 +33,7 @@ module.exports = function(app) {
       const userObj = {
         firstName: user.dataValues.firstName,
         lastName: user.dataValues.lastName,
-         timer: sliceTime
+        timer: sliceTime
       };
       console.log(userObj);
       res.render("membersDashboard", userObj);
@@ -41,5 +41,9 @@ module.exports = function(app) {
   });
   app.get("/goals", (req, res) => {
     res.render("goalschoice");
+  });
+
+  app.get("/nutrition", (req, res) => {
+    res.render("foodform");
   });
 };
