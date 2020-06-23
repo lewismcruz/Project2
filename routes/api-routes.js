@@ -30,7 +30,7 @@ module.exports = function(app) {
 
   app.get("/api/nutrition", (req, res) => {
     console.log(req.body);
-    //res.redirect("/");
+    res.json(req.body);
   });
 
   app.get("/api/user_data", (req, res) => {
