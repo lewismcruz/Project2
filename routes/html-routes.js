@@ -46,4 +46,8 @@ module.exports = function(app) {
   app.get("/nutrition", (req, res) => {
     res.render("foodform");
   });
+
+  app.get("/fitness", (req, res) => {
+    res.render("fitnessform");
+  });
 };

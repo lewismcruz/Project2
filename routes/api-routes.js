@@ -33,6 +33,11 @@ module.exports = function(app) {
     //res.redirect("/");
   });
 
+  app.get("/api/fitness", (req, res) => {
+    console.log(req.body);
+    //res.redirect("/");
+  });
+
   app.get("/api/user_data", (req, res) => {
     if (!req.user) {
       res.json({});

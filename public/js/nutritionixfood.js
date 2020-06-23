@@ -15,7 +15,6 @@ $(document).ready(() => {
       .trim();
     console.log(foodItem3);
 
-
     //===== Nutritionix food calorie calculator API =====
     const nutritionAPIcall = {
       url: "https://trackapi.nutritionix.com/v2/natural/nutrients",
@@ -33,10 +32,6 @@ $(document).ready(() => {
     };
 
     $.ajax(nutritionAPIcall).done(response => {
-      console.log(response);
-    });
-
-    $.ajax(exerciseAPIcall).done(response => {
       console.log(response);
     });
   });
