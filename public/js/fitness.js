@@ -36,9 +36,9 @@ $(document).ready(() => {
     method: "POST",
     timeout: 0,
     headers: {
-      "x-app-key": "8a9544917169c7687bec8663146d894c",
+      "x-app-key": process.env.X_APP_API_KEY,
       "Content-Type": "application/json",
-      "x-app-id": "15c44cc6"
+      "x-app-id": process.env.X_APP_ID
     },
     //"data": JSON.stringify({"query":"ran 3 miles","gender":"male","weight_kg":85,"height_cm":155.5,"age":35}),
     data: JSON.stringify({
