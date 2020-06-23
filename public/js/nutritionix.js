@@ -14,25 +14,27 @@ $(document).ready(() => {
       .val()
       .trim();
     console.log(foodItem3);
-    
-    
+
     //function postNutrition(foodItem1, foodItem2, foodItem3) {
 
     // Nutritionix food calorie counter
-    var settings = {
-      "url": "https://trackapi.nutritionix.com/v2/natural/nutrients",
-      "method": "POST",
-      "timeout": 0,
-      "headers": {
+    const settings = {
+      url: "https://trackapi.nutritionix.com/v2/natural/nutrients",
+      method: "POST",
+      timeout: 0,
+      headers: {
         "x-app-key": "8a9544917169c7687bec8663146d894c",
         "Content-Type": "application/json",
         "x-app-id": "15c44cc6"
       },
-      "data": JSON.stringify({"query":foodItem1 + " " + foodItem2 + " " + foodItem3, "timezone":"US/Eastern"}),
+      data: JSON.stringify({
+        query: foodItem1 + " " + foodItem2 + " " + foodItem3,
+        timezone: "US/Eastern"
       })
     };
 
-    $.ajax(settings).done((response) => {
+    $.ajax(settings).done(response => {
       console.log(response);
     });
+  });
 });

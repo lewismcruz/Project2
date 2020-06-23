@@ -41,12 +41,10 @@ module.exports = function(app) {
   });
 
   app.get("/nutrition", isAuthenticated, (req, res) => {
-    
     res.render("foodform");
   });
 
   app.get("/fitness", isAuthenticated, (req, res) => {
-    
     res.render("fitness");
   });
 };
