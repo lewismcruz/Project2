@@ -1,0 +1,46 @@
+<div class"container">
+
+   {{> navbar/navbar}}
+
+</div>
+
+<form id="signup" class="form-horizontal" role="form">             
+
+{{!-- field --}}
+
+<h2>Input what you ate today.</h2>
+<p>You may enter: I ate 2 eggs or 1 cup of orange juice or 2 strips of bacon.</p>
+<p>Enter each item of food in each field provided. Only 3 items available at this time.</p>
+<p>This app will then show you how many calories those items have.</p>
+
+<div class="form-group">
+  <label for="foodItem1" class="col-md-3 control-label">Food Item </label>
+    <div class="col-md-9">  
+      <input type="text" class="form-control" name="foodItem1" id="food1" placeholder="First Food Item">
+    </div>
+</div>
+
+{{!-- field --}}
+
+<div class="form-group">
+  <label for="foodItem2" class="col-md-3 control-label">Food Item</label>
+    <div class="col-md-9">
+     <input type="text" class="form-control" name="foodItem2" id="food2" placeholder="Second Food Item">
+    </div>
+</div>
+
+{{!-- field --}}
+
+<div class="form-group">
+  <label for="foodItem3" class="col-md-3 control-label">Food Item</label>
+    <div class="col-md-9">
+      <input type="text" class="form-control" name="foodItem3" id="food3" placeholder="Third Food Item">
+    </div>
+</div>
+
+{{!-- submit --}}
+
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="js/nutritionix.js"></script>

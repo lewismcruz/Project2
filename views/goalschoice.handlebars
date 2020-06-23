@@ -1,0 +1,84 @@
+{{> navbar/navbar}}
+
+<div class="container">    
+    <div id="signupbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+        <div class="panel panel-info" >
+        <div class="panel-heading">
+            <div class="panel-title">Sign Up</div>
+    </div>     
+
+        <div style="padding-top:30px" class="panel-body" >
+        <div style="display:none" id="signin-alert" class="alert alert-danger col-sm-12"></div>
+                    
+    <form id="signup" class="form-horizontal" role="form">             
+        <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="email-input" type="text" class="form-control" name="username" value="" placeholder="Email">                                        
+        </div>
+        <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input id="password-input" type="password" class="form-control" name="password" placeholder="Password">
+        </div>     
+        <div class="form-group">
+            <label for="firstname" class="col-md-3 control-label">First Name</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="firstname" id="firstName-input" placeholder="First Name">
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="lastname" id="lastName-input" placeholder="Last Name">
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="height" class="col-md-3 control-label">Height</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="height-input" name="height" placeholder="Height in inches">
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="weight" class="col-md-3 control-label">Weight</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="weight-input" name="weight" placeholder="Weight in pounds">
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="gender" class="col-md-3 control-label">Gender</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="gender-input" name="gender" placeholder="Gender">
+                </div>
+        </div>
+          <div class="input-group">
+                    <div class="checkbox">
+                      <label>
+                        <input id="signin-remember" type="checkbox" name="remember" value="1"> Remember me?
+                      </label>
+                    </div>
+          </div>
+          {{!-- can we link the sign in to FB with the same API? --}}
+          <div style="margin-top:10px" class="form-group">
+              <div class="col-sm-12 controls">
+                <button class="btn btn-success" id="btn-signin submit" type="submit"> Sign Up </button>
+                <button class="btn btn-primary" type="button" id="btn-fbsignin" href="#" disabled>Sign up with Facebook</button>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <div class="col-md-12 control">
+                  <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                      Already have an account?
+                  <a href="/login" onClick="$('#signinbox').hide(); $('#signupbox').show()">
+                      Log Up Here
+                  </a>
+              </div>
+            </div>
+          </div>    
+      </form>     
+    </div>                     
+    </div>  
+    </div>
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script> 
