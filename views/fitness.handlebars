@@ -1,32 +1,59 @@
-<div class="container">
 
 {{> navbar/navbar}}
 
+<br>
+<div class="form-group container">
+
+  <div class="card text-center">
+  <div class="card-header" style="background-color: #3498db">
+    <h2>Input your Activity.</h2>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">Add minutes or distance.</h5>
+    <p class="card-text">Example: I did 30 mins of yoga, or I ran 2 miles, or I cycled for 50 mins.</p>
+
+    <label for="run" class="col-md control-label"></label>
+     <div class="col-md">
+        <input type="text" class="form-control" name="run" id="runTime" placeholder="Please include miles or minutes.">
+     </div>&nbsp;&nbsp;&nbsp;
+
+     <div class="form-check">
+        <input class="form-check-input" type="radio" id="runnning exampleRadios1" name="running" value="option1">
+        <label class="form-check-label" for="customRadio1">Running</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="biking exampleRadios1" name="biking" value="option2">
+        <label class="form-check-label" for="customRadio2">Biking</label>
+      </div> 
+            <div class="form-check">
+        <input class="form-check-input" type="radio" id="yoga exampleRadios1" name="yoga" value="option2">
+        <label class="form-check-label" for="customRadio2">Yoga</label>
+      </div> 
+<br>
+    <button class="btn btn-success controls" id="caloriesButton" type="submit">Activity Tracker</button>
+  </div>
+  <div class="card-footer" style="background-color:#3498db; color:white" > 3 minutes ago</div>
+</div>
+<br>
+
+<div class="col-md">
+<div class="card">
+  <div class="card-header">
+    Weekly Fitness Minutes
+  </div>
+  <div class="card-body">
+   {{> charts/fitnessChart}}
+  </div>
+</div>
 </div>
 
-
-<div class="form-group container">
-    
-    <h2>Input which activity you performed today.</h2>
-    <p>You may enter a complete sentence. i.e. I did 30 mins of yoga, or I ran 2 miles, or I cycled for 50 mins.</p>
-    
-    <label for="run" class="col-md-3 control-label">Activity</label>
-     <div class="col-md-9">
-        <input type="text" class="form-control" name="run" id="runTime" placeholder="Please include miles or mis">
-     </div>
-    </div>
-
-          <div style="margin-top:10px" class="form-group">
-              <div class="col-sm-12 controls">
-                <button class="btn btn-success" id="caloriesButton" type="submit">Activity Tracker</button>
-              </div>
-          </div>
-            </div>
-          </div>    
-      </form> 
-    <div class="container" id="activity"></div>
-
- {{> footer/footer}}
+  <div class="container" id="activity"></div>
+</div>
+   
+  {{> footer/footer}}
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script type="text/javascript" src="js/fitness.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+      <script src="./js/barChart.js"></script>

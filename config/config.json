@@ -1,10 +1,8 @@
 
-
-
 {
   "development": {
     "username": "root",
-    "password": "Love22**",
+    "password": "MYSQL_PASSWORD",
     "database": "funactiv_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

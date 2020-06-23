@@ -1,21 +1,22 @@
-<div class"container">
 
    {{> navbar/navbar}}
+<br>
+<div class="form-group container">
 
-</div>
+<div class="card text-center">
+  <div class="card-header" style="background-color:#3498db">
+    <h2>Input your Meals. </h2>
+  </div>
 
-<form id="signup" class="form-horizontal" role="form">             
+  <div class="card-body">
+    <h5 class="card-title">Enter each item of food in each field provided. Add 3 items at a time.</h5>
+    <p class="card-text">Example: I ate 2 eggs or 1 cup of orange juice or 2 strips of bacon.</p>
 
 {{!-- field --}}
-
-<h2>Input what you ate today.</h2>
-<p>You may enter: I ate 2 eggs or 1 cup of orange juice or 2 strips of bacon.</p>
-<p>Enter each item of food in each field provided. Only 3 items available at this time.</p>
-<p>This app will then show you how many calories those items have.</p>
-
+<form id="signup" class="form-horizontal" role="form">  
 <div class="form-group">
-  <label for="foodItem1" class="col-md-3 control-label">Food Item </label>
-    <div class="col-md-9">  
+  <label for="foodItem1" class="col-md control-label">Food Item </label>
+    <div class="col-md">  
       <input type="text" class="form-control" name="foodItem1" id="food1" placeholder="First Food Item">
     </div>
 </div>
@@ -23,8 +24,8 @@
 {{!-- field --}}
 
 <div class="form-group">
-  <label for="foodItem2" class="col-md-3 control-label">Food Item</label>
-    <div class="col-md-9">
+  <label for="foodItem2" class="col-md control-label">Food Item</label>
+    <div class="col-md">
      <input type="text" class="form-control" name="foodItem2" id="food2" placeholder="Second Food Item">
     </div>
 </div>
@@ -32,21 +33,35 @@
 {{!-- field --}}
 
 <div class="form-group">
-  <label for="foodItem3" class="col-md-3 control-label">Food Item</label>
-    <div class="col-md-9">
+  <label for="foodItem3" class="col-mdcontrol-label">Food Item</label>
+    <div class="col-md">
       <input type="text" class="form-control" name="foodItem3" id="food3" placeholder="Third Food Item">
     </div>
 </div>
 
-{{!-- submit --}}
+<button class="btn btn-success controls" id="caloriesButton" type="submit">Calculate your macros</button>
+  </div>
+  <div class="card-footer" style="background-color:#3498db; color:white" > 2 days ago</div>
+</div> 
+</div>
+<br>
 
-        <div style="margin-top:10px" class="form-group">
-              <div class="col-sm-12 controls">
-                <button class="btn btn-success" id="caloriesButton" type="submit">Calculate your macros</button>
-              </div>
-        <div class="contanier" id="obj"></div>
-
- {{> footer/footer}}
+  <div class="col-md">
+    <div class="card">
+  <div class="card-header">
+    Daily Nutrition Log
+  </div>
+  <div class="card-body">
+   {{> charts/nutritionChart}}
+  </div>
+</div>
+</div>
+</div>
+<br>
+  {{> footer/footer}}
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script type="text/javascript" src="js/nutritionix.js"></script>
+      <script type="text/javascript" src="js/fitness.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+      <script src="./js/barChart.js"></script>
