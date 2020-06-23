@@ -39,8 +39,6 @@ $(document).ready(() => {
     gender.val("");
   });
 
-  // Does a post to the signup route. If successful, we are redirected to the members page
-  // Otherwise we log any errors
   // eslint-disable-next-line prettier/prettier
   function signUpUser(email, password, firstName, lastName, weight, height, gender) {
     $.post("/api/signup", {

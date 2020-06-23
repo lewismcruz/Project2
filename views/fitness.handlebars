@@ -18,18 +18,7 @@
         <input type="text" class="form-control" name="run" id="runTime" placeholder="Please include miles or minutes.">
      </div>&nbsp;&nbsp;&nbsp;
 
-     <div class="form-check">
-        <input class="form-check-input" type="radio" id="runnning exampleRadios1" name="running" value="option1">
-        <label class="form-check-label" for="customRadio1">Running</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" id="biking exampleRadios1" name="biking" value="option2">
-        <label class="form-check-label" for="customRadio2">Biking</label>
-      </div> 
-            <div class="form-check">
-        <input class="form-check-input" type="radio" id="yoga exampleRadios1" name="yoga" value="option2">
-        <label class="form-check-label" for="customRadio2">Yoga</label>
-      </div> 
+     
 <br>
     <button class="btn btn-success controls" id="caloriesButton" type="submit">Activity Tracker</button>
   </div>
@@ -42,13 +31,14 @@
   <div class="card-header">
     Weekly Fitness Minutes
   </div>
+    <div class="container" id="activity"></div>
+
   <div class="card-body">
    {{> charts/fitnessChart}}
   </div>
 </div>
 </div>
 
-  <div class="container" id="activity"></div>
 </div>
    
   {{> footer/footer}}
