@@ -39,15 +39,17 @@ module.exports = function(app) {
       res.render("membersDashboard", userObj);
     });
   });
-  app.get("/goals", (req, res) => {
-    res.render("goalschoice");
-  });
 
-  app.get("/nutrition", (req, res) => {
+  app.get("/nutrition", isAuthenticated, (req, res) => {
     res.render("foodform");
   });
 
+<<<<<<< HEAD
   app.get("/fitness", (req, res) => {
     res.render("fitnessform");
+=======
+  app.get("/fitness", isAuthenticated, (req, res) => {
+    res.render("fitness");
+>>>>>>> e49f2908c22fe372096b3ec8fe9dc7bd26639aa6
   });
 };

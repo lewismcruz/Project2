@@ -29,8 +29,8 @@ module.exports = function(app) {
   });
 
   app.get("/api/nutrition", (req, res) => {
-    console.log(req.body);
-    //res.redirect("/");
+    console.log(req.body, "TEST", res);
+    res.json(req.body);
   });
 
   app.get("/api/fitness", (req, res) => {

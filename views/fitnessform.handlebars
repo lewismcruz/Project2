@@ -4,59 +4,35 @@
 <div class="container">
 </div>
 
-<div class="form-group">
+
+<div class="form-group container">
+    
     <h2>Input which activity you performed today.</h2>
-    <p>You may enter: I ran for 30 mins or I ran 2 miles or I cycled for 50 mins.</p>
-    <p>Enter each activity in each field provided. Only 3 items available at this time.</p>
-    <p>This app will then show you how many calories you consumed by doing your activity.</p>
-    <p>Use this to plan your nutritional requirements and workout routines.</p>
-    <label for="gender" class="col-md-3 control-label">Gender</label>
+    <p>You may enter a complete sentence. i.e. I did 30 mins of yoga, or I ran 2 miles, or I cycled for 50 mins.</p>
+    
+    <label for="run" class="col-md-3 control-label">Activity</label>
      <div class="col-md-9">
-        <input type="text" class="form-control" name="gender" id="gender" placeholder="Gender">
-     </div>
-    <label for="weight" class="col-md-3 control-label">Weight</label>
-     <div class="col-md-9">
-        <input type="text" class="form-control" name="weight" id="weight" placeholder="Weight">
-     </div>
-    <label for="height" class="col-md-3 control-label">Height</label>
-     <div class="col-md-9">
-        <input type="text" class="form-control" name="height" id="height" placeholder="Height">
-     </div>
-     <label for="age" class="col-md-3 control-label">Age</label>
-     <div class="col-md-9">
-        <input type="text" class="form-control" name="age" id="age" placeholder="Age">
-     </div>
-    <label for="run" class="col-md-3 control-label">Minutes Run</label>
-     <div class="col-md-9">
-        <input type="text" class="form-control" name="run" id="runTime" placeholder="Minutes Run">
+        <input type="text" class="form-control" name="run" id="runTime" placeholder="Please include miles or mis">
      </div>
     </div>
-        {{!-- field --}}
-    <div class="form-group">
-    <label for="walk" class="col-md-3 control-label">Minutes Walked</label>
-        <div class="col-md-9">
-         <input type="text" class="form-control" name="walk" id="walkTime" placeholder="Minutes Walked">
-            </div>
-        </div>
-    {{!-- field --}}
-        <div class="form-group">
-            <label for="bike" class="col-md-3 control-label">Minutes Cycling</label>
-            <div class="col-md-9">
-                <input type="text" class="form-control" name="bike" id="bikeTime" placeholder="Minutes Cycling">
-            </div>
-        </div>
 
 
 <!-- ####################################################### -->
 <!-- Do not delete this section - this is the SUBMIT button! -->
           <div style="margin-top:10px" class="form-group">
               <div class="col-sm-12 controls">
-                <button class="btn btn-success" id="caloriesButton" type="submit"> Calories</button>
+                <button class="btn btn-success" id="caloriesButton" type="submit">Activity Tracker</button>
               </div>
           </div>
             </div>
           </div>    
       </form> 
+<<<<<<< HEAD:views/fitnessform.handlebars
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/nutritionixfitness.js"></script>
+=======
+    <div class="container" id="activity"></div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="js/fitness.js"></script>
+>>>>>>> e49f2908c22fe372096b3ec8fe9dc7bd26639aa6:views/fitness.handlebars
