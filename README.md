@@ -5,7 +5,7 @@ The FunActiv app is a new app developed by Joel Truitt, Celeste Bembry, Brandon 
 
 The app is designed to help users track fitness activity and nutritional goals.
 
-The app is hosted at ![FunActiv App] (https://agile-thicket-05064.herokuapp.com/) FunActivApp
+The app is hosted at [FunActiv App](https://agile-thicket-05064.herokuapp.com/) FunActivApp
 
 # FunActiv Features
 Users are presented with a login landing page where they can sign up for a FunActiv account.
