@@ -2,33 +2,49 @@
 
    {{> navbar/navbar}}
 <br>
-
-<div class="container">
    {{> dashboardCard/memberDataCard}}
    {{#each user}}
     <p>{{dbUser}}</p>
       
   {{/each}}
   <br>
+<div class="container">
 <div class="row">
+
+<div class="col-md-6">
 <div class="card">
   <div class="card-header">
     Weekly Fitness Minutes
   </div>
   <div class="card-body">
-   <canvas id="fitnessChart" width="600" height="300"></canvas>
+   <canvas id="fitnessChart" width="500" height="300"></canvas>
   </div>
 </div>
-<br><br>
+</div>
+
+<br>
+
+<div class="col-md-6">
 <div class="card">
   <div class="card-header">
     Daily Nutrition Log
   </div>
   <div class="card-body">
-   <canvas id="nutritionChart" width="600" height="300"></canvas>
+   <canvas id="nutritionChart" width="500" height="300"></canvas>
   </div>
 </div>
 </div>
+
+</div>
+<br>
+
+ {{> footer/footer}}
+ 
+</div>
+
+
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
