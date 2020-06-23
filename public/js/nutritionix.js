@@ -1,15 +1,19 @@
 $(document).ready(() => {
   $("#caloriesButton").on("click", event => {
     event.preventDefault();
+    console.log("You clicked");
     const foodItem1 = $("#food1")
       .val()
       .trim();
+    console.log(foodItem1);
     const foodItem2 = $("#food2")
       .val()
       .trim();
+    console.log(foodItem2);
     const foodItem3 = $("#food3")
       .val()
       .trim();
+    console.log(foodItem3);
 
     //function postNutrition(foodItem1, foodItem2, foodItem3) {
 

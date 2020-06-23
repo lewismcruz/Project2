@@ -1,4 +1,21 @@
-form.signup,
-form.login {
-  margin-top: 50px;
+
+
+.header {
+  color: #36A0FF;
+  font-size: 27px;
+  padding: 10px;
+}
+
+.formbox {
+  font-size: 18px;
+  align-content: center;
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+  background: #555;
+  padding: 10px;
+}
+
+form {
+  display: inline-block;
 }
