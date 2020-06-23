@@ -1,7 +1,3 @@
-// Nutritionix exercise activity calorie burn
-// Then we take the calories and compute how many minutes of walking, running, biking, swimming
-// user must do in order to burn X amount of calories according to what they
-// provided as food they ate.
 $(document).ready(() => {
   $("#caloriesButton").on("click", event => {
     event.preventDefault();
@@ -19,19 +15,18 @@ $(document).ready(() => {
       },
       //"data": JSON.stringify({"query":"ran 3 miles","gender":"male","weight_kg":85,"height_cm":155.5,"age":35}),
       data: JSON.stringify({
-        query:
-          run
+        query: run
       })
     };
 
     $.ajax(settings).then(res => {
-        console.log(res);
-        const resObjConstructor = `
+      console.log(res);
+      const resObjConstructor = `
         <div class="container">
             <div class="row">
               <div class="col">
            <p>
-           <h5>Activity: ${res.exercises[0].name}</h5>
+           <h3>Activity: ${res.exercises[0].name}</h3>
            <h5>Active Mins: ${res.exercises[0].duration_min}</h5>
            <h5>Calories Burned: ${res.exercises[0].nf_calories}</h5>
            </p>
@@ -39,8 +34,8 @@ $(document).ready(() => {
            </div>
         </div>
       `;
-            const element = document.getElementById("activity");
-            element.innerHTML = resObjConstructor;
+      const element = document.getElementById("activity");
+      element.innerHTML = resObjConstructor;
     });
   });
 });
